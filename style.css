@@ -104,12 +104,46 @@ a {
   font-size: 16px;
 }
 
-
 .srch:focus{
     border-color: #338bff;
     outline: none;
     box-shadow: 0 0 5px #338bff;
 }
+
+.dark-mode-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-left: 10px;
+  color: #333;
+}
+
+.dark-mode-btn:hover {
+  color: #555;
+}
+
+/* Modo escuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode nav {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .menu ul li a {
+  color: #f1f1f1;
+}
+
+body.dark-mode .content,
+body.dark-mode section,
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
 
 .quad {
   display: flex;
