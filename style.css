@@ -137,8 +137,33 @@ body.dark-mode .menu ul li a {
 
 body.dark-mode .content,
 body.dark-mode section,
+body.dark-mode .team-section,
 body.dark-mode footer {
   background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode .content h1{
+  color: #f1f1f1;
+}
+
+body.dark-mode .Sobre h2{
+  color: #f1f1f1;
+}
+
+body.dark-mode .agendamento h2{
+  color: #f1f1f1;
+}
+
+body.dark-mode .team-section h2{
+  color: #f1f1f1
+}
+
+body.dark-mode .Galeria h2{
+  color: #f1f1f1
+}
+
+body.dark-mode .secção-titulo h2{
   color: #f1f1f1;
 }
 
