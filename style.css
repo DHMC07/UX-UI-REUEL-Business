@@ -110,6 +110,10 @@ a {
     box-shadow: 0 0 5px #338bff;
 }
 
+.search-icon:hover{
+  color: #2E8CE4;
+}
+
 .dark-mode-btn {
   background: none;
   border: none;
