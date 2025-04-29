@@ -942,6 +942,24 @@ body.dark-mode .Let input{
 }
 
 @media (max-width: 768px) {
+  .navbar{
+    width: 100%;
+    height: 28vh;
+  }
+  .icon{ /* Logo na Barra de navegação */
+      width: 190px;
+      height: 60px;
+  }
+  
+  .logo{ /* imagem do logo */
+      width: 80px; 
+      height: 80px; 
+  }
+    
+  .dark-mode-btn {
+    font-size: 1.6rem;
+  }
+
   .menu {
     display: none;
     flex-direction: column;
@@ -984,8 +1002,182 @@ body.dark-mode .Let input{
   #bmenu:hover{
     color: #2E8CE4;
   }
-
   
+  .quad-item { /* Primeira Box*/
+      width: 300px;
+      height:auto;
+  }
+  
+  .cta .call{ /* Botão Junte-se a Nos */
+      width: 155px;
+      height: 35px;
+  }
+  
+  .quad-item1 { /* Segunda Box*/
+      width: 245px;
+      height:250px;
+  }
+  
+  .content .par{ /* Primeira Box*/
+      font-size: 30px;
+  }
+  
+  .content .parTitulo{ /* Segunda Box*/
+      font-size: 20px;
+  }
+  
+  .content .par1{ /* Primeira Box*/
+      font-size: 12px;
+  }
+  
+  .content .par2{ /* Segunda Box*/
+      font-size: 12px;
+  }
+  
+  .content h1{ /* Tem a ver com o Titulo */
+      font-size: 35px;
+
+  } 
+  
+  .Sobre h2{
+    font-size: 28px;
+  }
+  
+  .texto_sobre{
+      font-size: 12px;
+  }
+  
+  
+  .servicos {
+      font-size: 1.8rem;
+    }
+    
+    .servicos h2 {
+      font-size: 1.8rem;
+    }
+    
+  .subtitulo {
+      font-size: 0.9rem;
+    }
+    
+  .icon {
+      font-size: 2.2rem;
+      width: 60px;
+      height: 60px;
+    }
+    
+  .card h3 {
+      font-size: 1.2rem;
+    }
+    
+  .card p {
+      font-size: 0.8rem;
+    }
+    
+  .agendamento h2 {
+      font-size: 1.8rem;
+    }
+    
+  .subtitulo1 {
+      font-size: 0.9rem;
+    }
+    
+  .form-agendamento {
+      max-width: 1090px;
+    }
+      
+  .form-agendamento input,
+  .form-agendamento select,
+  .form-agendamento textarea {
+      font-size: 0.8rem;
+    }
+    
+  .form-agendamento button {
+      font-size: 16px;
+    }
+  
+  .secção-titulo {
+      margin-top: 1.5rem;
+  }
+    
+  .secção-titulo h2 {
+      font-size: 2rem;
+  }
+        
+  .team-section h2 {
+      font-size: 32px;
+    }
+    
+  .team-section p {
+      font-size: 16px;
+    }
+    
+  .team-card {
+      max-width: 280px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+  .team-card img {
+      width: 100px;
+      height: 100px;
+    }
+    
+  .team-card h3 {
+      font-size: 20px;
+    }
+    
+  .team-card .role {
+      font-size: 14px;
+    }
+  
+  .Galeria h2 {
+      font-size: 2rem;
+  }
+    
+    
+  .NewsLet{ /* Inicio do News */
+      height: auto;
+      width: 275px;
+      max-width: 400px;
+  }
+  
+  .NewsLet h2{ /* Titulo do News */
+      width: 150px;
+      height: 30px;
+      font-size: 22px;
+  }
+  
+  .Let input{ /* Entrada do News */
+      width: 95%;
+      height: 25px;
+      font-size: 15px;
+  }
+  
+  .btnn{
+      width: 240px;
+      height: 40px;
+      font-size: 18px;
+  }
+  
+  .social-icons a {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+  }
+    
+  .icon-circulo {
+      font-size: 1rem;
+      min-width: 30px;
+      height: 30px;
+  }
+    
+  .info-text h4 {
+      font-size: 1.3rem;
+  }
+    
+  .info-text p {
+      font-size: 0.9rem;
+  }  
 
 }
 
