@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reuel Business</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+
+</head>
+<body>
+        <nav class="navbar">
+            <div class="icon">
+                <img class="logo" src="https://i.postimg.cc/tRdSmQNJ/Reuel.jpg" alt="Logo Reuel" title="Logotipo">
+            </div>
+            <span id="bmenu" class="material-symbols-outlined">
+              menu
+            </span>
+            <div class="menu">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About">Sobre</a></li>
+                    <li><a href="#Service">Serviços</a></li>
+                    <li><a href="#Cambio">Câmbio</a></li>
+                    <li><a href="#Contact">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="search">
+              <input type="text" class="srch" placeholder="Pesquisar..." aria-label="Pesquisar">
+              <i class="fas fa-search search-icon"></i>
+            </div>
+        </nav>
+        
+
+        <div class="content">
+            <h1>Facilite a Gestão e Aquisição</h1>
+
+            <div class="quad">
+                <div class="quad-item">
+                  <p class="par">Por quê a Reuel Business?</p>  
+                    <p class="par1">
+                        Atendimento 24h, todos os dias. Com escritórios em Luanda (Camama), 
+                        Benguela e representação em Lisboa, 
+                        oferecemos atendimento presencial imediato em todo o país.
+                    </p>
+                    <div class="cta"> 
+                      <a href="#"><button class="call">Junte-se a Nós</button></a>
+                    </div> 
+                </div>
+                <div class="quad-item1">
+                  <p class="parTitulo">Imobiliário</p>
+                  <p class="par2"> 
+                    Encontre as melhores casas de Angola com rapidez, 
+                    segurança e o melhor custo-benefício. 
+                    Seu novo lar começa aqui!
+                  </p>
+                </div>
+
+                <div class="quad-item1">
+                    <p class="parTitulo">Mercado de Câmbio</p>
+                    <p class="par2">
+                        Operamos com confiança no mercado de câmbio, 
+                        oferecendo taxas justas, agilidade e 
+                        segurança em cada transação.  
+                    </p>                      
+                  </div>
+
+                  <div class="quad-item1">
+                    <p class="parTitulo">Auxílio na gestão de Empresas</p>
+                    <p class="par2">
+                        Na Reuel Business, apoiamos pequenas e 
+                        médias empresas com soluções de gestão eficientes e 
+                        práticas para o crescimento do seu negócio. 
+                    </p>                      
+                  </div>
+            </div>
+        </div>
+        
+        <section class="Sobre">
+          <h2>Sobre Nós</h2>
+          <div class="cont_sobre">
+            <div class="img_sobre">
+              <img src="https://i.postimg.cc/yYnfYxNG/Boss-REUEL.jpg" alt="Boss Reuel" title="Imagens dos Sócios">
+            </div>
+            <p class="texto_sobre">A Reuel Business é uma empresa dedicada a oferecer soluções modernas e acessíveis para pagamentos digitais. 
+            Atuamos com transparência, segurança e praticidade, ajudando nossos clientes a 
+            gerenciar suas finanças com autonomia e confiança.
+            Nosso compromisso é facilitar o acesso a ferramentas financeiras internacionais, 
+            promovendo inclusão digital e financeira em Angola e além. Com atendimento personalizado e 
+            suporte de qualidade, estamos prontos para transformar sua experiência com pagamentos globais.</p>
+          </div>
+          </section>
+
+        <section class="servicos">
+          <h2>Serviços</h2>
+          <p class="subtitulo">Soluções práticas para diferentes necessidades</p>
+          <div class="cards-servicos">
+            
+            <div class="card">
+              <div class="icon">💱</div>
+              <h3>Câmbio</h3>
+              <p>Serviço rápido e seguro de câmbio para diversas moedas
+                 com taxas competitivas e atendimento personalizado.</p>
+            </div>
+            
+            <div class="card">
+              <div class="icon">🏠</div>
+              <h3>Imobiliário</h3>
+              <p>Apoio completo na compra, venda ou arrendamento de imóveis,
+                 com foco em confiança e praticidade.</p>
+            </div>
+            
+            <div class="card">
+              <div class="icon">📊</div>
+              <h3>Gestão Empresarial</h3>
+              <p>Consultoria estratégica para pequenas e médias empresas, 
+                auxiliando na organização, crescimento e tomada de decisões.</p>
+            </div>
+        
+          </div>
+        </section>
+
+
+        <section class="agendamento">
+          <h2>Agende uma Visita</h2>
+          <p class="subtitulo1">Preencha os dados abaixo para marcar sua visita ao nosso escritório</p>
+        
+          <form class="form-agendamento">
+            <div class="linha-form">
+              <input type="text" placeholder="Seu Nome" required>
+              <input type="email" placeholder="Seu Email" required>
+              <input type="tel" placeholder="Seu Telefone" required>
+            </div>
+        
+            <div class="linha-form">
+              <input type="datetime-local" required>
+              <select required>
+                <option value="">Selecione o Serviço</option>
+                <option value="cambio">Câmbio</option>
+                <option value="imobiliario">Imobiliário</option>
+                <option value="gestao">Gestão Empresarial</option>
+              </select>
+              <input type="text" placeholder="Assunto da Visita (opcional)">
+            </div>
+        
+            <textarea placeholder="Mensagem adicional (opcional)" rows="4"></textarea>
+        
+            <button type="submit">Agendar Visita</button>
+          </form>
+        </section>   
+        
+        
+        <section class="team-section">
+          <h2>Nossa Equipa</h2>
+          <p>Conheça as pessoas por trás do nosso sucesso</p>
+          
+          <div class="team-grid">
+        
+            <div class="team-card">
+              <img src="https://i.postimg.cc/zGRKy4QZ/IMG-4714.jpg" alt="Luís Sangueve">
+              <h3>Luís Sangueve</h3>
+              <p class="role">CEO & Fundador</p>
+              <p>Lidera com visão estratégica e paixão pelo crescimento sustentável.</p>
+            </div>
+        
+            <div class="team-card">
+              <img src="https://i.postimg.cc/DyLgYKmx/A2149-FFA-113-A-4-BBA-8004-332-B9062-CB6-E.jpg" alt="Délcio Costa">
+              <h3>Délcio Costa</h3>
+              <p class="role">Visão Operacional & Co-Fundador</p>
+              <p>Responsável pela operação e estrutura que sustenta nosso trabalho.</p>
+            </div>
+        
+            <div class="team-card">
+              <img src="https://i.postimg.cc/3x9Qdxzq/ImgR.jpg" alt="Chelsea">
+              <h3>Chelcia Francisco</h3>
+              <p class="role">Secretária</p>
+              <p>Organiza, apoia e mantém a comunicação fluida entre as áreas.</p>
+            </div>
+        
+          </div>
+        </section>
+
+        <section class="Galeria">
+        <h2>Galeria</h2>
+        <div class="imgR">
+            <a class="ig" href='https://postimg.cc/c6pfSzMp' target='_blank'><img src='https://i.postimg.cc/rFmjSXdw/reuel-b.jpg' border='0' alt='Reuel-image' width="280" height="280"></a>
+            <a class="ig1" href='https://postimg.cc/JtDjS8J3' target='_blank'><img src='https://i.postimg.cc/Y288GqCP/reuel-bu.jpg' border='0' alt='Reuel-image' width="280" height="280"></a>
+            <a class="ig1" href='https://postimg.cc/FkLcSbmC' target='_blank'><img src='https://i.postimg.cc/5yPmZprJ/reuel-bus.jpg' border='0' alt='Reuel-image' width="280" height="280"></a>
+            <a class="ig1" href='https://postimg.cc/1nTw47xN' target='_blank'><img src='https://i.postimg.cc/BbZgYRMN/reuel-busi.jpg' border='0' alt='Reuel-image' width="280" height="280"></a>
+        </div>
+
+      </section>
+
+        <div class="secção-titulo">
+            <h2>Contact</h2>
+          </div>
+
+    <div class="Ant_rodp">
+        <div class="info-container">
+            <div class="info-box">
+              <div class="icon-circulo">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-text">
+                <h4>Localização</h4>
+                <p>Luanda-Camama</p>
+              </div>
+            </div>
+          
+            <div class="info-box">
+              <div class="icon-circulo">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="info-text">
+                <h4>Contacto</h4>
+                <p>+244 997 554 885</p>
+              </div>
+            </div>
+          
+            <div class="info-box">
+              <div class="icon-circulo">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-text">
+                <h4>Email</h4>
+                <p>info@example.com</p>
+              </div>
+            </div>
+        </div>
+
+        <div class="NewsLet">
+          <h2>Novidades</h2>
+            <div class="Let">
+                <input type="email" name="email" placeholder="Coloque o email aqui">
+                <button class="btnn">Receber</button>         
+            </div>
+        </div>
+    </div>
+
+    <div class="Volta_top"> 
+      <a href="#"><button class="Top">⬆️</button></a>
+    </div> 
+
+        <footer class="footer">
+            <p>&copy; 2024 Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+      const menuBtn = document.getElementById('bmenu');
+      const menu = document.querySelector('.menu');
+    
+      menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    
+
+      document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('active');
+  });
+});
+
+    </script>
+    
+</body>
+</html>
