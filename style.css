@@ -143,6 +143,10 @@ body.dark-mode footer {
   color: #f1f1f1;
 }
 
+body.dark-mode .subtitulo{
+  color: #d3d3d3;
+} 
+
 body.dark-mode .content h1{
   color: #f1f1f1;
 }
@@ -151,9 +155,17 @@ body.dark-mode .Sobre h2{
   color: #f1f1f1;
 }
 
+body.dark-mode .texto_sobre{
+  color: #f1f1f1;
+}
+
 body.dark-mode .agendamento h2{
   color: #f1f1f1;
 }
+
+body.dark-mode .subtitulo1{
+  color: #d3d3d3;
+} 
 
 body.dark-mode .team-section h2{
   color: #f1f1f1
@@ -165,6 +177,27 @@ body.dark-mode .Galeria h2{
 
 body.dark-mode .secção-titulo h2{
   color: #f1f1f1;
+}
+
+body.dark-mode .info-text h4{
+  color: #f1f1f1;
+}
+
+body.dark-mode .info-text p{
+  color: #d3d3d3;
+}
+
+body.dark-mode .NewsLet h2{
+  color: #f1f1f1
+}
+
+body.dark-mode .NewsLet p{
+  color: #bebebe;
+}
+
+body.dark-mode .Let input{
+  background-color: #e7e7e7;
+  color: #00376b;
 }
 
 .quad {
@@ -407,7 +440,7 @@ body.dark-mode .secção-titulo h2{
 .card {
     background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 2xl;
+    border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 8px 20px #0000000d;
     display: flex;
@@ -523,6 +556,7 @@ body.dark-mode .secção-titulo h2{
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: 15px;
   }
   
 .form-agendamento button:hover {
@@ -807,29 +841,24 @@ body.dark-mode .secção-titulo h2{
   margin-top: 20px;
 }
 
-.Volta_top .Top{ /* Botão "Voltar ao top" */
-  width: 40px;
-  height: 40px;
-  background: #2E8CE4;
+.Top {
+  background-color: #2E8CE4;
+  color: #fff;
   border: none;
-  margin-bottom: 10px;
+  border-radius: 50%;
+  padding: 12px 14px;
   font-size: 18px;
-  border-radius: 8px;
+  box-shadow: 0 4px 6px #678097;
   cursor: pointer;
-  color: #2E8CE4;
+  transition: background-color 0.3s ease;
 }
 
-.Volta_top .Top a{
-  text-decoration: none;
-  color: #2E8CE4;
-  transition: 0.3s ease;
+.Top:hover {
+  background-color: #00376b;
 }
 
-.Top:hover{ /* Botão "Voltar ao top" */
-background-color: #005dc8;
-transform: translateY(-5px);
-}
-  
+
+
 
 .footer{
     padding-top: 0px;
