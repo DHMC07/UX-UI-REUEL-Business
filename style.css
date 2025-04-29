@@ -113,14 +113,12 @@ a {
 .dark-mode-btn {
   background: none;
   border: none;
+  border-radius: 8px;
   font-size: 1.8rem;
   cursor: pointer;
   margin-left: 10px;
-  color: #333;
-}
-
-.dark-mode-btn:hover {
-  color: #555;
+  margin-right: 45px;
+  align-items: center;
 }
 
 /* Modo escuro */
@@ -143,7 +141,6 @@ body.dark-mode footer {
   background-color: #1e1e1e;
   color: #f1f1f1;
 }
-
 
 .quad {
   display: flex;
