@@ -567,7 +567,7 @@ body.dark-mode .Let input{
     background-color: #005dc8;
   }
   
-  
+
 .secção-titulo {
     text-align: center;
     margin-top: 1.5rem;
@@ -765,7 +765,7 @@ body.dark-mode .Let input{
     font-family: sans-serif;
 }
 .btnn:hover{
-    background: #00376b;
+    background: #005dc8;
     color: #fff;
     transform: scale(1.05);
 }
@@ -858,7 +858,7 @@ body.dark-mode .Let input{
 }
 
 .Top:hover {
-  background-color: #00376b;
+  background-color: #005dc8;
 }
 
 .footer{
