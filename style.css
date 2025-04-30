@@ -566,6 +566,20 @@ body.dark-mode .Let input{
 .form-agendamento button:hover {
     background-color: #005dc8;
   }
+
+  .erro-msg {
+    display: block;
+    color: #b00020;
+    background: #ffe5e5;
+    border: 1px solid #b00020;
+    padding: 0;
+    border-radius: 4px;
+    font-size: 13px;
+    margin: 4px 0;
+    width: 355px;
+    height: 20px;
+    box-sizing: border-box;
+  }
   
 
 .secção-titulo {

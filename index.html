@@ -139,7 +139,7 @@
               <input id="email" type="email" placeholder="Seu Email" required>
               <input id="telefone" type="tel" placeholder="Seu Telefone" required inputmode="numeric">
             </div>
-        
+          
             <div class="linha-form">
               <input id="data" type="datetime-local" required>
               <select id="servico" required>
@@ -150,11 +150,11 @@
               </select>
               <input id="assunto" type="text" placeholder="Assunto da Visita (opcional)">
             </div>
-        
+          
             <textarea id="mensagem" placeholder="Mensagem adicional (opcional)" rows="4"></textarea>
-        
-            <div id="mensagens-erro" style="color: red; margin-top: 10px;"></div>
-        
+          
+            <div id="mensagens-erro"></div>
+                    
             <button type="submit">Agendar Visita</button>
           </form>
         </div>        
@@ -278,7 +278,7 @@
   
 
   // JS do Formulário
-  document.addEventListener("DOMContentLoaded", function () {
+ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("form-agendamento");
 
   // Limita a data para hoje em diante
@@ -287,72 +287,58 @@
   const isoAgora = agora.toISOString().slice(0, 16); // yyyy-MM-ddThh:mm
   dataInput.min = isoAgora;
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+  document.getElementById("form-agendamento").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-    document.querySelectorAll(".erro-popup").forEach(e => e.remove());
-    let temErros = false;
+  const campos = [
+    { id: "nome", mensagem: "⚠️ O nome é obrigatório.", validar: val => val.trim() !== "" },
+    { id: "email", mensagem: "⚠️ Insira um e-mail válido.", validar: val => /\S+@\S+\.\S+/.test(val) },
+    { id: "telefone", mensagem: "⚠️ Use o formato: +Código + número (mín. 8 dígitos).", validar: val => /^\+\d{8,15}$/.test(val) },
+    { id: "data", mensagem: "⚠️ Escolha uma data futura.", validar: val => {
+      const agora = new Date();
+      const dataInput = new Date(val);
+      return val && dataInput > agora;
+    }},
+    { id: "servico", mensagem: "⚠️ Selecione um serviço.", validar: val => val !== "" }
+  ];
 
-    const campos = {
-      nome: { el: document.getElementById("nome"), val: v => v !== "", msg: "⚠️ O nome é obrigatório." },
-      email: { el: document.getElementById("email"), val: v => /\S+@\S+\.\S+/.test(v), msg: "⚠️ Insira um e-mail válido." },
-      telefone: {
-        el: document.getElementById("telefone"),
-        val: v => /^\+\d{8,15}$/.test(v),
-        msg: "⚠️ Coloque o '+' seguido do código do país (mínimo 8 dígitos)."
-      },
-      data: {
-        el: document.getElementById("data"),
-        val: v => {
-          const d = new Date(v);
-          return v !== "" && d >= agora;
-        },
-        msg: "⚠️ Escolha uma data e hora futura."
-      },
-      servico: {
-        el: document.getElementById("servico"),
-        val: v => v !== "",
-        msg: "⚠️ Selecione um serviço."
-      }
-    };
+  let temErro = false;
 
-    for (const key in campos) {
-      const { el, val, msg } = campos[key];
-      const valor = el.value.trim();
+  campos.forEach(({ id, mensagem, validar }) => {
+    const campo = document.getElementById(id);
+    removerErro(campo);
 
-      if (!val(valor)) {
-        mostrarErro(el, msg);
-        temErros = true;
-      }
-    }
-
-    if (!temErros) {
-      alert("✅ Visita agendada com sucesso!");
-      form.reset();
+    if (!validar(campo.value)) {
+      mostrarErro(campo, mensagem);
+      temErro = true;
     }
   });
 
-  // Mostrar mensagens de erro como pop-up flutuante
-  function mostrarErro(input, mensagem) {
-    const erro = document.createElement("div");
-    erro.className = "erro-popup";
-    erro.innerText = mensagem;
-
-    const rect = input.getBoundingClientRect();
-    erro.style.position = "absolute";
-    erro.style.left = rect.left + window.scrollX + "px";
-    erro.style.top = rect.bottom + window.scrollY + 5 + "px";
-    erro.style.background = "#ffe0e0";
-    erro.style.color = "#b00020";
-    erro.style.padding = "6px 10px";
-    erro.style.border = "1px solid #b00020";
-    erro.style.borderRadius = "5px";
-    erro.style.fontSize = "13px";
-    erro.style.zIndex = "1000";
-
-    erro.dataset.for = input.id;
-    document.body.appendChild(erro);
+  if (!temErro) {
+    alert("✅ Visita agendada com sucesso!");
+    this.reset();
   }
+});
+
+function mostrarErro(campo, mensagem) {
+  const erro = document.createElement("div");
+  erro.className = "erro-msg";
+  erro.innerText = mensagem;
+  campo.insertAdjacentElement("afterend", erro);
+}
+
+function removerErro(campo) {
+  const proximo = campo.nextElementSibling;
+  if (proximo && proximo.classList.contains("erro-msg")) {
+    proximo.remove();
+  }
+}
+
+// Atualiza dinamicamente ao digitar
+["nome", "email", "telefone", "data", "servico"].forEach(id => {
+  const campo = document.getElementById(id);
+  campo.addEventListener("input", () => removerErro(campo));
+});
 
   // Atualiza/remover erro ao corrigir qualquer campo
   ["nome", "email", "telefone", "data", "servico"].forEach(id => {
