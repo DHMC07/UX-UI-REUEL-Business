@@ -151,14 +151,15 @@
               <input id="assunto" type="text" placeholder="Assunto da Visita (opcional)">
             </div>
           
-            <textarea id="mensagem" placeholder="Mensagem adicional (opcional)" rows="4"></textarea>
+            <div class="linha-form">
+              <textarea id="mensagem" placeholder="Mensagem adicional (opcional)" rows="4"></textarea>
+            </div>
           
-            <div id="mensagens-erro"></div>
-                    
-            <button type="submit">Agendar Visita</button>
+            <div class="linha-form" style="justify-content: center;">
+              <button type="submit">Agendar Visita</button>
+            </div>
           </form>
-        </div>        
-        
+      
         
         <div class="team-section">
           <h2>Nossa Equipa</h2>
@@ -293,7 +294,7 @@
   const campos = [
     { id: "nome", mensagem: "⚠️ O nome é obrigatório.", validar: val => val.trim() !== "" },
     { id: "email", mensagem: "⚠️ Insira um e-mail válido.", validar: val => /\S+@\S+\.\S+/.test(val) },
-    { id: "telefone", mensagem: "⚠️ Use o formato: +Código + número (mín. 8 dígitos).", validar: val => /^\+\d{8,15}$/.test(val) },
+    { id: "telefone", mensagem: "⚠️ Use o indicativo do país (+).", validar: val => /^\+\d{8,15}$/.test(val) },
     { id: "data", mensagem: "⚠️ Escolha uma data futura.", validar: val => {
       const agora = new Date();
       const dataInput = new Date(val);
@@ -321,18 +322,23 @@
 });
 
 function mostrarErro(campo, mensagem) {
+  const parent = campo.closest(".campo");
+  if (!parent || parent.querySelector(".erro-msg")) return;
+
   const erro = document.createElement("div");
   erro.className = "erro-msg";
   erro.innerText = mensagem;
-  campo.insertAdjacentElement("afterend", erro);
+
+  parent.appendChild(erro);
 }
 
+
 function removerErro(campo) {
-  const proximo = campo.nextElementSibling;
-  if (proximo && proximo.classList.contains("erro-msg")) {
-    proximo.remove();
-  }
+  const parent = campo.closest(".campo");
+  const erro = parent?.querySelector(".erro-msg");
+  if (erro) erro.remove();
 }
+
 
 // Atualiza dinamicamente ao digitar
 ["nome", "email", "telefone", "data", "servico"].forEach(id => {
@@ -362,7 +368,7 @@ function removerErro(campo) {
     if (valido) erroPopup.remove();
   }
 
-  // Máscara para telefone com código do país
+  // Indicativo com código do país
   document.getElementById("telefone").addEventListener("input", function () {
     this.value = this.value
       .replace(/[^\d+]/g, "")
@@ -370,6 +376,39 @@ function removerErro(campo) {
       .replace(/(?!^)\+/g, "");
   });
 });
+
+  document.getElementById("form-agendamento").addEventListener("submit", function (e) {
+    e.preventDefault(); // Impede envio automático
+
+    // Obter os valores dos campos
+    const nome = document.getElementById("nome");
+    const email = document.getElementById("email");
+    const telefone = document.getElementById("telefone");
+    const data = document.getElementById("data");
+    const servico = document.getElementById("servico");
+
+    let erro = "";
+
+    if (!nome.value.trim()) erro += "• Nome é obrigatório\n";
+    if (!email.value.trim() || !email.validity.valid) erro += "• Email inválido\n";
+    if (!telefone.value.trim()) erro += "• Telefone é obrigatório\n";
+    if (!data.value.trim()) erro += "• Data é obrigatória\n";
+    if (!servico.value.trim()) erro += "• Selecione um serviço\n";
+
+    const msgStatus = document.getElementById("mensagem-status");
+
+    if (erro) {
+      alert("Corrija os seguintes erros:\n\n" + erro);
+      msgStatus.textContent = "Preencha os campos obrigatórios.";
+      msgStatus.style.color = "red";
+      return;
+    }
+
+    msgStatus.textContent = "Formulário enviado com sucesso!";
+    msgStatus.style.color = "green";
+
+    this.reset(); // Limpa o formulário após envio
+  });
 
 </script>
     
