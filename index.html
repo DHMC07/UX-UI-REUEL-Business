@@ -84,7 +84,7 @@
             </div>
         </div>
         
-        <section class="Sobre">
+        <section id="About" class="Sobre">
           <h2>Sobre Nós</h2>
           <div class="cont_sobre">
             <div class="img_sobre">
@@ -99,7 +99,7 @@
           </div>
           </section>
 
-        <section class="servicos">
+        <section id="Service" class="servicos">
           <h2>Serviços</h2>
           <p class="subtitulo">Soluções práticas para diferentes necessidades</p>
           <div class="cards-servicos">
@@ -133,29 +133,31 @@
           <h2>Agende uma Visita</h2>
           <p class="subtitulo1">Preencha os dados abaixo para marcar sua visita ao nosso escritório</p>
         
-          <form class="form-agendamento">
+          <form id="form-agendamento" class="form-agendamento" novalidate>
             <div class="linha-form">
-              <input type="text" placeholder="Seu Nome" required>
-              <input type="email" placeholder="Seu Email" required>
-              <input type="tel" placeholder="Seu Telefone" required>
+              <input id="nome" type="text" placeholder="Seu Nome" required>
+              <input id="email" type="email" placeholder="Seu Email" required>
+              <input id="telefone" type="tel" placeholder="Seu Telefone" required>
             </div>
         
             <div class="linha-form">
-              <input type="datetime-local" required>
-              <select required>
+              <input id="data" type="datetime-local" required>
+              <select id="servico" required>
                 <option value="">Selecione o Serviço</option>
                 <option value="cambio">Câmbio</option>
                 <option value="imobiliario">Imobiliário</option>
                 <option value="gestao">Gestão Empresarial</option>
               </select>
-              <input type="text" placeholder="Assunto da Visita (opcional)">
+              <input id="assunto" type="text" placeholder="Assunto da Visita (opcional)">
             </div>
         
-            <textarea placeholder="Mensagem adicional (opcional)" rows="4"></textarea>
+            <textarea id="mensagem" placeholder="Mensagem adicional (opcional)" rows="4"></textarea>
+        
+            <div id="mensagens-erro" style="color: red; margin-top: 10px;"></div>
         
             <button type="submit">Agendar Visita</button>
           </form>
-        </div>   
+        </div>        
         
         
         <div class="team-section">
@@ -199,8 +201,8 @@
 
       </section>
 
-    <div class="secção-titulo">
-       <h2>Contact</h2>
+    <div id="Contact" class="secção-titulo">
+       <h2>Contacto</h2>
     </div>
 
     <div class="Ant_rodp">
@@ -272,6 +274,36 @@
   const toggle = document.getElementById('darkModeToggle');
   toggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+  });
+  
+
+  // JS do Formulário
+  document.getElementById("form-agendamento").addEventListener("submit", function (event) {
+    event.preventDefault(); // Impede envio automático
+
+    const erros = [];
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telefone = document.getElementById("telefone").value.trim();
+    const data = document.getElementById("data").value;
+    const servico = document.getElementById("servico").value;
+
+    if (nome === "") erros.push("⚠️ O nome é obrigatório.");
+    if (email === "" || !/\S+@\S+\.\S+/.test(email)) erros.push("⚠️ Insira um e-mail válido.");
+    if (telefone === "" || telefone.length < 7) erros.push("⚠️ Insira um telefone válido (mínimo 7 dígitos).");
+    if (data === "") erros.push("⚠️ Escolha uma data e hora.");
+    if (servico === "") erros.push("⚠️ Selecione um serviço.");
+
+    const divErros = document.getElementById("mensagens-erro");
+
+    if (erros.length > 0) {
+      divErros.innerHTML = erros.join("<br>");
+    } else {
+      divErros.innerHTML = "";
+      alert("✅ Visita agendada com sucesso!");
+      this.reset(); // limpa o formulário (ou envie de verdade, se desejar)
+    }
   });
 
 </script>
