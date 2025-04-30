@@ -278,39 +278,111 @@
   
 
   // JS do Formulário
-  document.getElementById("form-agendamento").addEventListener("submit", function (event) {
-    event.preventDefault(); // Impede envio automático
+  document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("form-agendamento");
 
-    const erros = [];
+  // Limita a data para hoje em diante
+  const dataInput = document.getElementById("data");
+  const agora = new Date();
+  const isoAgora = agora.toISOString().slice(0, 16); // yyyy-MM-ddThh:mm
+  dataInput.min = isoAgora;
 
-    const nome = document.getElementById("nome").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const telefone = document.getElementById("telefone").value.trim();
-    const data = document.getElementById("data").value;
-    const servico = document.getElementById("servico").value;
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-    if (nome === "") erros.push("⚠️ O nome é obrigatório.");
-    if (email === "" || !/\S+@\S+\.\S+/.test(email)) erros.push("⚠️ Insira um e-mail válido.");
-    if (!/^\+\d{8,15}$/.test(telefone)) erros.push("⚠️ Coloque o '+' seguido do código do país.");
-    if (data === "") erros.push("⚠️ Escolha uma data e hora.");
-    if (servico === "") erros.push("⚠️ Selecione um serviço.");
+    document.querySelectorAll(".erro-popup").forEach(e => e.remove());
+    let temErros = false;
 
-    const divErros = document.getElementById("mensagens-erro");
+    const campos = {
+      nome: { el: document.getElementById("nome"), val: v => v !== "", msg: "⚠️ O nome é obrigatório." },
+      email: { el: document.getElementById("email"), val: v => /\S+@\S+\.\S+/.test(v), msg: "⚠️ Insira um e-mail válido." },
+      telefone: {
+        el: document.getElementById("telefone"),
+        val: v => /^\+\d{8,15}$/.test(v),
+        msg: "⚠️ Coloque o '+' seguido do código do país (mínimo 8 dígitos)."
+      },
+      data: {
+        el: document.getElementById("data"),
+        val: v => {
+          const d = new Date(v);
+          return v !== "" && d >= agora;
+        },
+        msg: "⚠️ Escolha uma data e hora futura."
+      },
+      servico: {
+        el: document.getElementById("servico"),
+        val: v => v !== "",
+        msg: "⚠️ Selecione um serviço."
+      }
+    };
 
-    if (erros.length > 0) {
-      divErros.innerHTML = erros.join("<br>");
-    } else {
-      divErros.innerHTML = "";
+    for (const key in campos) {
+      const { el, val, msg } = campos[key];
+      const valor = el.value.trim();
+
+      if (!val(valor)) {
+        mostrarErro(el, msg);
+        temErros = true;
+      }
+    }
+
+    if (!temErros) {
       alert("✅ Visita agendada com sucesso!");
-      this.reset(); // limpa o formulário (ou envie de verdade, se desejar)
+      form.reset();
     }
   });
 
-  document.getElementById("telefone").addEventListener("input", function (e) {
-  this.value = this.value
-    .replace(/[^\d+]/g, "")        // Remove tudo exceto dígitos e "+"
-    .replace(/^([^+])/, "+$1")     // Garante que "+" seja apenas no início
-    .replace(/(?!^)\+/g, "");      // Remove "+" se aparecer mais de uma vez
+  // Mostrar mensagens de erro como pop-up flutuante
+  function mostrarErro(input, mensagem) {
+    const erro = document.createElement("div");
+    erro.className = "erro-popup";
+    erro.innerText = mensagem;
+
+    const rect = input.getBoundingClientRect();
+    erro.style.position = "absolute";
+    erro.style.left = rect.left + window.scrollX + "px";
+    erro.style.top = rect.bottom + window.scrollY + 5 + "px";
+    erro.style.background = "#ffe0e0";
+    erro.style.color = "#b00020";
+    erro.style.padding = "6px 10px";
+    erro.style.border = "1px solid #b00020";
+    erro.style.borderRadius = "5px";
+    erro.style.fontSize = "13px";
+    erro.style.zIndex = "1000";
+
+    erro.dataset.for = input.id;
+    document.body.appendChild(erro);
+  }
+
+  // Atualiza/remover erro ao corrigir qualquer campo
+  ["nome", "email", "telefone", "data", "servico"].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener("input", () => removerErroSeValido(id));
+  });
+
+  function removerErroSeValido(id) {
+    const input = document.getElementById(id);
+    const erroPopup = document.querySelector(`.erro-popup[data-for="${id}"]`);
+    if (!erroPopup) return;
+
+    let valido = false;
+
+    if (id === "nome") valido = input.value.trim() !== "";
+    if (id === "email") valido = /\S+@\S+\.\S+/.test(input.value.trim());
+    if (id === "telefone") valido = /^\+\d{8,15}$/.test(input.value.trim());
+    if (id === "data") valido = input.value && new Date(input.value) >= new Date();
+    if (id === "servico") valido = input.value.trim() !== "";
+
+    if (valido) erroPopup.remove();
+  }
+
+  // Máscara para telefone com código do país
+  document.getElementById("telefone").addEventListener("input", function () {
+    this.value = this.value
+      .replace(/[^\d+]/g, "")
+      .replace(/^([^+])/, "+$1")
+      .replace(/(?!^)\+/g, "");
+  });
 });
 
 </script>
