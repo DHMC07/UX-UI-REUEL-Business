@@ -137,7 +137,7 @@
             <div class="linha-form">
               <input id="nome" type="text" placeholder="Seu Nome" required>
               <input id="email" type="email" placeholder="Seu Email" required>
-              <input id="telefone" type="tel" placeholder="Seu Telefone" required>
+              <input id="telefone" type="tel" placeholder="Seu Telefone" required inputmode="numeric">
             </div>
         
             <div class="linha-form">
@@ -291,7 +291,7 @@
 
     if (nome === "") erros.push("⚠️ O nome é obrigatório.");
     if (email === "" || !/\S+@\S+\.\S+/.test(email)) erros.push("⚠️ Insira um e-mail válido.");
-    if (telefone === "" || telefone.length < 7) erros.push("⚠️ Insira um telefone válido (mínimo 7 dígitos).");
+    if (!/^\+\d{8,15}$/.test(telefone)) erros.push("⚠️ Coloque o '+' seguido do código do país.");
     if (data === "") erros.push("⚠️ Escolha uma data e hora.");
     if (servico === "") erros.push("⚠️ Selecione um serviço.");
 
@@ -305,6 +305,13 @@
       this.reset(); // limpa o formulário (ou envie de verdade, se desejar)
     }
   });
+
+  document.getElementById("telefone").addEventListener("input", function (e) {
+  this.value = this.value
+    .replace(/[^\d+]/g, "")        // Remove tudo exceto dígitos e "+"
+    .replace(/^([^+])/, "+$1")     // Garante que "+" seja apenas no início
+    .replace(/(?!^)\+/g, "");      // Remove "+" se aparecer mais de uma vez
+});
 
 </script>
     
