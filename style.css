@@ -257,8 +257,8 @@ body.dark-mode .Let input{
 }
 
 .call:hover{ /* Botão "Junta-se Nós */
- background-color: #005dc8;
- color: #ffffff;
+ background-color: #fff;
+ color: #135B9A;
  transform: scale(1.05); /* Leve crescimento ao passar o mouse */
  transform: translateY(-5px);
 }
