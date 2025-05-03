@@ -30,7 +30,7 @@ a {
     width: 90px; 
     height: 90px; 
     border-radius:50%; 
-    border: 3px solid #2E8CE4; 
+    border: 3px solid #135695; 
     margin-left: 2px;
     border-radius: 70%;
 }
@@ -39,7 +39,7 @@ a {
   display: none;
   cursor: pointer;
   font-size: 2rem;
-  color: #476887;
+  color: #135695;
 }
 
 .menu{
@@ -66,7 +66,7 @@ a {
 
 .menu ul li a {
     text-decoration: none;
-    color: #476887;
+    color: #253F46;
     font-family: Arial, sans-serif;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
@@ -90,7 +90,7 @@ a {
   font-family: Arial, sans-serif;
   width: 100%;
   padding: 10px 40px 10px 15px;
-  border: 1px solid #476887;
+  border: 1px solid #135695;
   border-radius: 20px;
   font-size: 14px;
   outline: none;
@@ -99,7 +99,7 @@ a {
 .search-icon {
   position: absolute;
   right: 15px;
-  color: #476887;
+  color: #135695;
   cursor: pointer;
   font-size: 16px;
 }
@@ -111,7 +111,7 @@ a {
 }
 
 .search-icon:hover{
-  color: #2E8CE4;
+  color: #135695;
 }
 
 .dark-mode-btn {
@@ -218,10 +218,10 @@ body.dark-mode .Let input{
 .quad-item { /* Primeira Box*/
     flex-direction: column;
     display: flex;
-    background-color: #1977cc;
+    background-color: #135B9A;
     width: 320px;
     height:auto;
-    border-radius: 5px;
+    border-radius: 5%;
     margin: 0px; /* Remove espaçamentos externos */
     box-shadow: 4px 4px 10px #00000033; 
 }
@@ -247,18 +247,18 @@ body.dark-mode .Let input{
     font-size: 18px;
     border-radius: 10px;
     cursor: pointer;
-    color: #2E8CE4;
+    color: #135695;
 }
 
 .cta .call a{
     text-decoration: none;
-    color: #2E8CE4;
+    color: #135695;
     transition: 0.3s ease;
 }
 
 .call:hover{ /* Botão "Junta-se Nós */
- background-color: #005dc8;
- color: #ffffff;
+ background-color: #fff;
+ color: #135B9A;
  transform: scale(1.05); /* Leve crescimento ao passar o mouse */
  transform: translateY(-5px);
 }
@@ -268,7 +268,8 @@ body.dark-mode .Let input{
     display: flex;
     width: 250px;
     height:270px;
-    border-radius: 5px;
+    border-radius: 5%;
+    border: 1px solid #00376b;
     margin: 0px; /* Remove espaçamentos externos */
     box-shadow: 4px 4px 10px #00000033;
     background-color: #ffffff;
@@ -299,7 +300,7 @@ body.dark-mode .Let input{
     font-family: Arial;
     letter-spacing: 1.2px;
     line-height: 30px;
-    color: #2E8CE4;
+    color: #135695;
     font-weight: bold;
     font-weight: bold 80px;
     font-size: 25px;
@@ -325,7 +326,7 @@ body.dark-mode .Let input{
     font-family:Helvetica;
     letter-spacing: 1.2px;
     line-height: 30px;
-    color: #2E8CE4;
+    color: #135B9A;
     text-align: left;
     font-weight: bold 80px;
     font-size: 14px;
@@ -379,7 +380,7 @@ body.dark-mode .Let input{
   margin: 8px auto;
   width: 55px;
   height: 4px;
-  background-color: #1977cc;
+  background-color: #135B9A;
   border-radius: 2px;
   position: relative;
 }
@@ -389,7 +390,7 @@ body.dark-mode .Let input{
     flex: 1;
     font-size: 14px;
     line-height: 1.6;
-    color: #0095ff;
+    color: #38506B;
     letter-spacing: 1.2px;
     font-family: Helvetica;
     padding-left: 5px;
@@ -421,14 +422,14 @@ body.dark-mode .Let input{
     margin: 8px auto;
     width: 55px;
     height: 4px;
-    background-color: #1977cc;
+    background-color: #135B9A;
     border-radius: 2px;
     position: relative;
 }
 
   
 .subtitulo {
-    color: #476887;
+    color: #38506B;
     font-size: 1.2rem;
     margin-bottom: 2rem;
   }
@@ -443,10 +444,10 @@ body.dark-mode .Let input{
   
 .card {
     background-color: #ffffff;
-    border: 1px solid #ddd;
+    border: 1px solid #00376b;
     border-radius: 12px;
     padding: 2rem;
-    box-shadow: 0 8px 20px #0000000d;
+    box-shadow: 4px 4px 10px #00000033;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -478,7 +479,7 @@ body.dark-mode .Let input{
   
 .card p {
     font-size: 1rem;
-    color: #476887;
+    color: #38506B;
     text-align: left;
     line-height: 1.6;
   }
@@ -497,7 +498,7 @@ body.dark-mode .Let input{
   }
   
 .subtitulo1 {
-    color: #476887;
+    color: #38506B;
     font-size: 16px;
     margin-bottom: 40px;
   }
@@ -551,7 +552,7 @@ body.dark-mode .Let input{
   }
   
 .form-agendamento button {
-    background-color: #007bff;
+    background-color: #135695;
     color: white;
     padding: 14px 30px;
     border: none;
@@ -566,7 +567,7 @@ body.dark-mode .Let input{
 .form-agendamento button:hover {
     background-color: #005dc8;
   }
-  
+   
 
 .secção-titulo {
     text-align: center;
@@ -589,7 +590,7 @@ body.dark-mode .Let input{
     margin: 8px auto;
     width: 55px;
     height: 4px;
-    background-color: #1977cc;
+    background-color: #135B9A;
     border-radius: 2px;
     position: relative;
 }
@@ -610,7 +611,7 @@ body.dark-mode .Let input{
   }
   
 .team-section p {
-    color: #678097;
+    color: #51585C;
     font-size: 16px;
     margin-bottom: 40px;
     font-family: Arial, Helvetica, sans-serif;
@@ -649,7 +650,7 @@ body.dark-mode .Let input{
   
 .team-card .role {
     font-weight: bold;
-    color: #476887;
+    color: #38506B;
     font-size: 14px;
     margin-bottom: 10px;
   }
@@ -675,7 +676,7 @@ body.dark-mode .Let input{
     margin: 8px auto;
     width: 55px;
     height: 4px;
-    background-color: #1977cc;
+    background-color: #135B9A;
     border-radius: 2px;
     position: relative;
     justify-content: center;
@@ -704,7 +705,7 @@ body.dark-mode .Let input{
 
 .NewsLet{ /* Inicio do News */
     height: auto;
-    box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #bebebe;
     justify-items: center;
     width: 275px;
     max-width: 400px;
@@ -734,9 +735,9 @@ body.dark-mode .Let input{
     padding: 5px;
     height: 25px;
     background:#ffffff;
-    border: 1px solid #ccc;
+    border: 1px solid #38506B;
     border-radius: 5px;
-    color: #00376b;
+    color: #38506B;
     font-size: 15px;
     letter-spacing: 1px;
     margin-top: 20px;
@@ -753,7 +754,7 @@ body.dark-mode .Let input{
 .btnn{
     width: 240px;
     height: 40px;
-    background: #2E8CE4;
+    background: #135695;
     color: #ffffff;
     padding: 10px 20px;
     border: none;
@@ -765,7 +766,7 @@ body.dark-mode .Let input{
     font-family: sans-serif;
 }
 .btnn:hover{
-    background: #00376b;
+    background: #005dc8;
     color: #fff;
     transform: scale(1.05);
 }
@@ -779,7 +780,7 @@ body.dark-mode .Let input{
 .social-icons a {
     width: 40px;
     height: 40px;
-    background: #2E8CE4;
+    background: #135695;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -810,7 +811,7 @@ body.dark-mode .Let input{
 }
   
 .icon-circulo {
-    background-color: #1977cc;
+    background-color: #135695;
     color: #fff;
     padding: 12px;
     border-radius: 50%;
@@ -831,7 +832,7 @@ body.dark-mode .Let input{
   
 .info-text p {
     margin: 4px 0 0 0;
-    color: #2E8CE4;
+    color: #135695;
     font-size: 0.9rem;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -846,7 +847,7 @@ body.dark-mode .Let input{
 }
 
 .Top {
-  background-color: #2E8CE4;
+  background-color: #135695;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -858,7 +859,7 @@ body.dark-mode .Let input{
 }
 
 .Top:hover {
-  background-color: #00376b;
+  background-color: #005dc8;
 }
 
 .footer{
@@ -969,7 +970,7 @@ body.dark-mode .Let input{
     flex-direction: column;
     position: absolute;
     top: 130px;
-    right: 0;
+    right: 80px;
     background-color: #dae4ed;
     padding: 1rem 2rem;
     border-radius: 8px;
@@ -986,13 +987,13 @@ body.dark-mode .Let input{
     padding: 0;
     margin: 0;
     display: flex;
+    margin-right: 16px;
     flex-direction: column;
     gap: 1rem;
   }
 
   .menu ul li a {
     text-decoration: none;
-    color: #476887;
     font-weight: 500;
   }
 
@@ -1001,7 +1002,6 @@ body.dark-mode .Let input{
     margin-right: 40px;
     cursor: pointer;
     font-size: 2rem;
-    color: #476887;
   }
   #bmenu:hover{
     color: #2E8CE4;
