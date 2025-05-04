@@ -30,7 +30,7 @@ a {
     width: 90px; 
     height: 90px; 
     border-radius:50%; 
-    border: 3px solid #135695; 
+    border: 3px solid #00376b; 
     margin-left: 2px;
     border-radius: 70%;
 }
@@ -39,7 +39,7 @@ a {
   display: none;
   cursor: pointer;
   font-size: 2rem;
-  color: #135695;
+  color: #00376b;
 }
 
 .menu{
@@ -66,7 +66,7 @@ a {
 
 .menu ul li a {
     text-decoration: none;
-    color: #253F46;
+    color: #00376b;
     font-family: Arial, sans-serif;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
@@ -90,7 +90,7 @@ a {
   font-family: Arial, sans-serif;
   width: 100%;
   padding: 10px 40px 10px 15px;
-  border: 1px solid #135695;
+  border: 1px solid #00376b;
   border-radius: 20px;
   font-size: 14px;
   outline: none;
@@ -99,7 +99,7 @@ a {
 .search-icon {
   position: absolute;
   right: 15px;
-  color: #135695;
+  color: #00376b;
   cursor: pointer;
   font-size: 16px;
 }
@@ -111,7 +111,7 @@ a {
 }
 
 .search-icon:hover{
-  color: #135695;
+  color: #005dc8;
 }
 
 .dark-mode-btn {
